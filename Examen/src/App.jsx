@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { TextField } from "@mui/material";
 import "./App.css";
+import Data from "./Data";
 
 export const contexto = createContext(null);
 
@@ -79,20 +80,7 @@ function App() {
         <div className={`${error ? "here" : "gone"} alert`}>¡{mensaje}!</div>
       </div>
       <div id="vista-container" className={`${exito ? "here" : "gone"}`}>
-        <h1>Tus datos</h1>
-        <p>{name}</p>
-        <p>{pass}</p>
-        <p>{email}</p>
-        <button
-          onClick={() => {
-            setExito(!exito);
-            setName("");
-            setPass("");
-            setEmail("");
-          }}
-        >
-          Volver
-        </button>
+        <Data name={name} pass={pass} email={email}/>
       </div>
     </>
   );
